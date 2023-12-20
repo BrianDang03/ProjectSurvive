@@ -40,6 +40,10 @@ public class EnemyAI : MonoBehaviour
         {
             ChaseTarget();
         }
+        else
+        {
+            GetComponent<Animator>().SetTrigger("Idle");
+        }
 
         if (distanceToTarget <= navMeshAgent.stoppingDistance)
         {
@@ -49,12 +53,14 @@ public class EnemyAI : MonoBehaviour
 
     void ChaseTarget()
     {
+        GetComponent<Animator>().SetBool("Attack", false);
+        GetComponent<Animator>().SetTrigger("Move");
         navMeshAgent.SetDestination(target.position);
     }
 
     void AttackTarget()
     {
-        Debug.Log("Attacked");
+        GetComponent<Animator>().SetBool("Attack", true);
     }
 
     void OnDrawGizmosSelected()
