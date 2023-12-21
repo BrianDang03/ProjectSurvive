@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 4803492887712010333}
   - component: {fileID: 5470037561780049901}
   - component: {fileID: 1258267738586326931}
+  - component: {fileID: 1480197023142378528}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -68,7 +69,7 @@ Transform:
   - {fileID: 2379761226668739717}
   - {fileID: 1891447894061267646}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &1132254741942713849
 CharacterController:
@@ -242,6 +243,18 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1480197023142378528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5799113921772923974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ebed4e207856c445a78b5b1aa7b2193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5806160531780237056
 GameObject:
   m_ObjectHideFlags: 0

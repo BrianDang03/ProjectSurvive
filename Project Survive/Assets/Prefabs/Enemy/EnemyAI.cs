@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,6 +9,7 @@ public class EnemyAI : MonoBehaviour
 {
     [SerializeField] Transform target;
     [SerializeField] float chaseRange = 5;
+    [SerializeField] float turnSpeed = 5;
 
     NavMeshAgent navMeshAgent;
     float distanceToTarget = Mathf.Infinity;
@@ -36,6 +38,8 @@ public class EnemyAI : MonoBehaviour
 
     void EngageTarget()
     {
+        FaceTarget();
+
         if (distanceToTarget <= chaseRange)
         {
             ChaseTarget();
@@ -61,6 +65,15 @@ public class EnemyAI : MonoBehaviour
     void AttackTarget()
     {
         GetComponent<Animator>().SetBool("Attack", true);
+    }
+
+    void FaceTarget()
+    {
+        Vector3 direction = (target.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * turnSpeed);
+
+        //Transform.rotation = where the target is, we need to rotate at a certain speed.
     }
 
     void OnDrawGizmosSelected()
