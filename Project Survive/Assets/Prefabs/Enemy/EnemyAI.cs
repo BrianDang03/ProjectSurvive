@@ -36,11 +36,16 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    public void OnDamageTaken()
+    {
+        isProvoked = true;
+    }
+
     void EngageTarget()
     {
         FaceTarget();
 
-        if (distanceToTarget <= chaseRange)
+        if (distanceToTarget >= navMeshAgent.stoppingDistance)
         {
             ChaseTarget();
         }
