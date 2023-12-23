@@ -12,7 +12,6 @@ public class SceneLoader : MonoBehaviour
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        GetComponent<FirstPersonController>().enabled = true;
     }
 
     public void QuitGame()
