@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+        GetComponent<DisplayDamge>().ShowDamageImpact();
 
         if (health <= 0)
         {

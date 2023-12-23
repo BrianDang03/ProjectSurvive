@@ -36,7 +36,7 @@ Transform:
   m_Children:
   - {fileID: 8831205263679367906}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &731594280453306284
 NavMeshAgent:
@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8239e005228ead341bac1f2634f01168, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 100
+  hitPoints: 120
 --- !u!136 &2678520042256282797
 CapsuleCollider:
   m_ObjectHideFlags: 0
